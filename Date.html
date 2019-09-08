@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let MyDate = function (hours, day, month, year) {
+        this.hours = hours;
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
+        this.getHours = function () {
+            return this.hours;
+        };
+        this.getDay = function () {
+            return this.day;
+        };
+        this.getMonth = function () {
+            return this.month;
+        };
+        this.getYear = function () {
+            return this.year;
+        };
+
+    };
+    let birth = new MyDate(4, 25, 7, 1996);
+    let timeNow = new Date();
+    console.log(timeNow);
+    let hours = timeNow.getHours() - birth.getHours();
+    let day = timeNow.getDay() - birth.getDay();
+    let month = timeNow.getMonth() - birth.getMonth();
+    let year = timeNow.getFullYear() - birth.getYear();
+    let countHours = year * 12 * 30 * 24 + month * 30 * 24 + day * 24 + hours;
+    document.write("Tôi đã sống " + countHours + " giờ <br/>");
+    document.write("Tôi đã sống " +countHours*60 +" phút<br/>");
+    document.write("Tôi đã sống "+countHours*60*60+" giây<br/>");
+    let countDay = year*12*24 +month*30 +day +hours/24;
+    document.write("Tôi đã sống "+countDay.toFixed(2) +" ngày<br/>");
+    let countMonth = year*12 + month/30 +day + hours/24;
+    document.write("Tôi đã sống "+countMonth.toFixed(2) +" tháng<br/>");
+    let countYear = year +month/12 + day/(12*30) +hours/(12*30*24);
+    document.write("Tôi đã sống "+countYear.toFixed(2) +" năm<br/>");
+</script>
+</body>
+</html>

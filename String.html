@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+</head>
+<body>
+<script>
+    let string = 'Tôi yêu ngôn ngữ lập trình Javascript';
+    let count = 0;
+    for (let i=0;i<string.length;i++){
+        if (string[i] == 'a'){
+            count++;
+        }
+    }
+    document.write("Số lần xuất hiện chữ 'a': "+count+"<br/>");
+
+    splitted = string.split(" ",7);
+    document.write(splitted +"<br/>");
+    count =0;
+    for (let i=0;i<string.length;i++){
+        if (string[i] === ' '){
+            count++;
+        }
+    }
+    document.write("Số từ: " + ++count +"<br/>");
+
+    let changedString = string.splice(6,1,"Typescript");
+    document.write("String sau khi đổi: "+changedString);
+</script>
+</body>
+</html>
